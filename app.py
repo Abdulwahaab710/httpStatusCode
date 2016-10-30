@@ -1,8 +1,15 @@
 import sys
+import json
 
 
 def getStatusCode(httpStatusCode):
-    pass
+    try:
+        data = ''
+        with open('./httpStatusCode.json') as data_file:
+            data = json.load(data_file)
+        return data[httpStatusCode]
+    except KeyError:
+        print 'Invalid http status code :('
 
 
 def main():
