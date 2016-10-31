@@ -5,7 +5,7 @@ import json
 def getStatusCode(httpStatusCode):
     try:
         data = ''
-        with open('./httpStatusCode.json') as data_file:
+        with open('httpStatusCode.json') as data_file:
             data = json.load(data_file)
         return data[httpStatusCode]
     except KeyError:
@@ -20,3 +20,6 @@ def main():
         httpStatusCode = raw_input('Please type a http status code')
     finally:
         print getStatusCode(httpStatusCode)
+
+if __name__ == '__main__':
+    main()
